@@ -75,16 +75,17 @@ def calculate_scores(words):
         for i in word:
             scores += letter_scores.get(i.upper())
         all_scores.append(scores)
-get_word_with_letter(get_random_letter(converted_dictionary))
-calculate_scores(words)
-winner = 0
 
-#print(sum_scores)
-for i in range(len(names)):
-    if all_scores[winner] < all_scores[i]:
-        winner = i
-    print(f"{names[i]} набрал {all_scores[i]} очков")
-print(f"{names[winner]} победил,ура")
+
+def main():
+    get_word_with_letter(get_random_letter(converted_dictionary))
+    calculate_scores(words)
+    winner = 0
+    for i in range(len(names)):
+        if all_scores[winner] < all_scores[i]:
+            winner = i
+        print(f"{names[i]} набрал {all_scores[i]} очков")
+    print(f"{names[winner]} победил,ура")
 
 if __name__ == "__main__":
     main()
